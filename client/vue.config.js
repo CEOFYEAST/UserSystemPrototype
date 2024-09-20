@@ -1,11 +1,5 @@
 const { defineConfig } = require("@vue/cli-service");
-export default defineConfig({
-  base: "/UserSystemPrototype/client/",
-  plugins: [],
-  resolve: {
-    alias: [
-      
-    ]
-  },
+module.exports = defineConfig({
+  publicPath: process.env.NODE_ENV === "production" ? "/UserSystemPrototype/client/" : "/",
   transpileDependencies: true
 })
