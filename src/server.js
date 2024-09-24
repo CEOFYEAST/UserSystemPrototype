@@ -51,7 +51,7 @@ app.register(require('@fastify/swagger-ui'), {})
 app.register(require('./routes/items.js'))
 
 // Start listening.
-app.listen(process.env.PORT || 3000, '0.0.0.0', (err) => {
+app.listen(process.env.PORT || 3000, (err) => {
   if (err) {
     app.log.error(err)
     process.exit(1)
