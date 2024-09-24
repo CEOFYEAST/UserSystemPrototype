@@ -50,10 +50,14 @@ app.register(require('@fastify/swagger'), {})
 app.register(require('@fastify/swagger-ui'), {})
 app.register(require('./routes/items.js'))
 
+const PORT = process.env.PORT || 3000
+const HOST = '0.0.0.0'
+
 // Start listening.
-app.listen(process.env.PORT || 3000, (err) => {
-  if (err) {
-    app.log.error(err)
-    process.exit(1)
-  }
-})
+app.listen({ port: PORT, host: HOST }, (err, address) => {
+    if (err) {
+      console.error(err);
+      throw err;
+    }
+    console.log(`Fastify server is running on ${address}`);
+  });
