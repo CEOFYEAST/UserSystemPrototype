@@ -21,7 +21,7 @@ fastify.register(require('./routes/items.js'))
 
 const start = async () => {
     try {
-        await fastify.listen({ port: $PORT })
+        await fastify.listen({ port: process.env.port })
     } catch(error) {
         fastify.log.error(error)
         process.exit(1)
